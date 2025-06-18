@@ -2,6 +2,7 @@ package com.ecommerce.order.controller;
 
 import com.ecommerce.order.dto.CartItemRequest;
 import com.ecommerce.order.model.CartItem;
+import com.ecommerce.order.repository.CartItemRepository;
 import com.ecommerce.order.services.CartService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -31,7 +32,7 @@ public class CartController {
     @DeleteMapping("/items/{productId}")
     public ResponseEntity<Void> removefromCart(
             @RequestHeader("X-User-ID") String userId,
-            @PathVariable Long productId) {
+            @PathVariable String productId) {
         boolean deleted = cartService.deleteItemFromCart(userId, productId);
         return deleted ? ResponseEntity.noContent().build()
                 : ResponseEntity.notFound().build();
@@ -42,4 +43,5 @@ public class CartController {
             @RequestHeader("X-User-ID") String userId) {
         return ResponseEntity.ok(cartService.getCart(userId));
     }
+
 }
