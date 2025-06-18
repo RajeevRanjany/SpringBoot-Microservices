@@ -1,11 +1,11 @@
 package com.ecommerce.user.services;
 
-import com.app.ecom.dto.AddressDTO;
-import com.app.ecom.dto.UserRequest;
-import com.app.ecom.dto.UserResponse;
-import com.app.ecom.model.Address;
-import com.app.ecom.model.User;
-import com.app.ecom.repositories.UserRepository;
+import com.ecommerce.user.dto.AddressDTO;
+import com.ecommerce.user.dto.UserRequest;
+import com.ecommerce.user.dto.UserResponse;
+import com.ecommerce.user.models.Address;
+import com.ecommerce.user.models.User;
+import com.ecommerce.user.repository.UserRepository;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -37,12 +37,12 @@ public class UserService {
     }
 
 
-    public Optional<UserResponse> fetchAUser(Long id) {
+    public Optional<UserResponse> fetchAUser(String id) {
         return userRepository.findById(id)
                 .map(this::mapToUserResponse);
     }
 
-    public boolean updateUser(Long id, UserRequest updatedUserRequest) {
+    public boolean updateUser(String id, UserRequest updatedUserRequest) {
         return userRepository.findById(id)
                 .map(existingUser -> {
                     updateUserFromRequest(existingUser, updatedUserRequest);

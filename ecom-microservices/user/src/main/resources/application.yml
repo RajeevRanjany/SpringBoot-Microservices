@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: user-service
+
+#mongoDb connection
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/userdb
+      database: userdb
+
+
+#postgres database connection
+
+#  datasource:
+#    url: jdbc:postgresql://localhost:5433/userdb
+#    username: root
+#    password: rajeev
+#
+#  jpa:
+#    database: postgresql
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update
+#    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+
+#h2 database connection
+
+#  h2:
+#    console:
+#      enabled: true
+#  datasource:
+#    url: jdbc:h2:mem:test
+#
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: create
+
+server:
+  port: 8082
