@@ -1,4 +1,5 @@
-version: "3.8"
+# this is a configuration for the postgres sql
+
 
 services:
   postgres:
@@ -38,3 +39,47 @@ networks:
 volumes:
   postgres:
   pgadmin:
+
+
+
+
+
+
+#this is the configuration for the mysql docker
+
+#version: "3.8"
+#
+#services:
+#  mysql:
+#    image: mysql:8.0
+#    container_name: mysql_container
+#    environment:
+#      MYSQL_ROOT_PASSWORD: rajeev
+#      MYSQL_DATABASE: ecom_microservices
+#    ports:
+#      - "3307:3306"
+#    volumes:
+#      - mysql_data:/var/lib/mysql
+#    networks:
+#      - mysql
+#    restart: unless-stopped
+#
+#  phpmyadmin:
+#    image: phpmyadmin/phpmyadmin
+#    container_name: phpmyadmin_container
+#    environment:
+#      PMA_HOST: mysql
+#      PMA_PORT: 3306
+#      MYSQL_ROOT_PASSWORD: rajeev
+#    ports:
+#      - "8484:80"
+#    networks:
+#      - mysql
+#    restart: unless-stopped
+#
+#networks:
+#  mysql:
+#    driver: bridge
+#
+#volumes:
+#  mysql_data:

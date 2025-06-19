@@ -5,7 +5,11 @@ spring:
 #mongoDb connection
   data:
     mongodb:
+      # this one is for the mongoDb compass which I have installed in local machine, and that one is for cloud mongodb
       uri: mongodb://localhost:27017/userdb
+
+#      this is for online version remote version of mongoDb I will stick to the local
+#      uri: mongodb+srv://rajeevranjanbcatnbbgp:yuyKPh7AcKEwPPxJ@user-data.hnf9fky.mongodb.net/?retryWrites=true&w=majority&appName=user-data
       database: userdb
 
 
