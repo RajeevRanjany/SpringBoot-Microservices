@@ -1,0 +1,56 @@
+spring:
+  application:
+    name: product-service
+
+  datasource:
+
+      url: jdbc:mysql://localhost:3306/productservice
+      username: root
+      password: rajeev
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQLDialect
+
+
+#    local postgres for Docker as well
+
+#    url: jdbc:postgresql://localhost:5433/product
+#    username: root
+#    password: rajeev
+
+
+
+    # This is for remote postgres of neon db -> server based which we call remote
+    properties:
+      hibernate:
+        format_sql: true
+
+#    url: jdbc:postgresql://ep-still-sun-abf8b6ii-pooler.eu-west-2.aws.neon.tech/neondb?sslmode=require
+#
+#    username: neondb_owner
+#    password: npg_R7wxMEQ0bOne
+#
+#  jpa:
+#    database: postgresql
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update
+#    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+
+#  h2:
+#    console:
+#      enabled: true
+#  datasource:
+#    url: jdbc:h2:mem:test
+#
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: create
+
+server:
+  port: 8081
