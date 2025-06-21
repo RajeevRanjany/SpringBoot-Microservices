@@ -1,0 +1,13 @@
+spring:
+  application:
+    name : configserver
+  profiles:
+    active: native
+#    native means local
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config
+server:
+  port: 8888

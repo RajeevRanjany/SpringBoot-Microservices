@@ -1,8 +1,9 @@
 package com.ecommerce.user.controllers;
 
-import com.app.ecom.dto.UserRequest;
-import com.app.ecom.dto.UserResponse;
-import com.app.ecom.service.UserService;
+
+import com.ecommerce.user.dto.UserRequest;
+import com.ecommerce.user.dto.UserResponse;
+import com.ecommerce.user.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +25,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UserResponse> getUser(@PathVariable Long id) {
+    public ResponseEntity<UserResponse> getUser(@PathVariable String id) {
 //        return userService.fetchAUser(id);
         return userService.fetchAUser(id)
                 .map(ResponseEntity::ok)
@@ -38,7 +39,7 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<String> updateUser(@PathVariable Long id, @RequestBody UserRequest updatedUserRequest) {
+    public ResponseEntity<String> updateUser(@PathVariable String id, @RequestBody UserRequest updatedUserRequest) {
         boolean updated = userService.updateUser(id, updatedUserRequest);
         if (updated) {
             return ResponseEntity.ok("user updated successfully");

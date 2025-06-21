@@ -1,54 +1,22 @@
 spring:
-  application:
-    name: user-service
-  config:
-    import: optional:configserver:http://localhost:8888
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #mongoDb connection
-#  data:
-#    mongodb:
+  data:
+    mongodb:
       # this one is for the mongoDb compass which I have installed in local machine, and that one is for cloud mongodb
-#      uri: mongodb://localhost:27017/userdb
+      uri: ${MONGO_URI}
 
 #      this is for online version remote version of mongoDb I will stick to the local
-#      uri: mongodb+srv://rajeevranjanbcatnbbgp:yuyKPh7AcKEwPPxJ@user-data.hnf9fky.mongodb.net/?retryWrites=true&w=majority&appName=user-data
-#      database: userdb
+#      uri: ${DB_URL}
+      database: userdb
 
 
 #postgres database connection
 
 #  datasource:
-#    url: jdbc:postgresql://localhost:5433/userdb
-#    username: root
-#    password: rajeev
+#    url: ${DB_URL}
+#    username: ${DB_USER}
+#    password: ${DB_PASSWORD}
 #
 #  jpa:
 #    database: postgresql
@@ -71,5 +39,5 @@ spring:
 #    hibernate:
 #      ddl-auto: create
 
-#server:
-#  port: 8082
+server:
+  port: 8082
