@@ -3,11 +3,26 @@ spring:
     name : configserver
   profiles:
     active: native
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
 #    native means local
   cloud:
     config:
       server:
         native:
-          search-locations: classpath:/config
+#          search-locations: classpath:/config
+          search-locations: file:////Users/rajeevranjan/Desktop/Java/Microservices/ecom-microservices/configserver/src/main/resources/config
+
 server:
   port: 8888
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

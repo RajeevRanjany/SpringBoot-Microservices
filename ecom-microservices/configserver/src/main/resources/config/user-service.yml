@@ -10,6 +10,12 @@ spring:
 #      uri: ${DB_URL}
       database: userdb
 
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
 
 #postgres database connection
 
@@ -41,3 +47,9 @@ spring:
 
 server:
   port: 8082
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

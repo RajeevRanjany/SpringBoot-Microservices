@@ -24,6 +24,18 @@ spring:
     username: ${DB_USER}
     password: ${DB_PASSWORD}
 
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+  cloud:
+    bus:
+      enabled: true
+
+
+
 
 
     # This is for remote postgres of neon db -> server based which we call remote
@@ -58,3 +70,14 @@ spring:
 
 server:
   port: 8081
+
+# actuator related settings
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+app:
+  message: "hello mitttarrr"

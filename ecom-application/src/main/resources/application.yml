@@ -1,0 +1,68 @@
+#spring.application.name=ecom-application
+#
+## h2 database connection
+#spring.h2.console.enabled=true
+#spring.datasource.url=jdbc:h2:mem:test
+#
+#spring.jpa.show-sql=true
+#spring.jpa.hibernate.ddl-auto=create
+#
+#management.endpoints.web.exposure.include=*
+
+spring:
+  application:
+    name: ecom-application
+  datasource:
+    url: jdbc:postgresql://localhost:5433/ecomdb
+
+    username: root
+    password: rajeev
+
+  jpa:
+    database: postgresql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+#  h2:
+#    console:
+#      enabled: true
+#  datasource:
+#    url: jdbc:h2:mem:test
+#
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: create
+
+
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    access:
+      default:
+  endpoint:
+      health:
+        show-details: always
+      shutdown:
+        enabled: true
+
+  info:
+    env:
+      enabled: true
+info:
+    app:
+      name: MyNewApp
+      description: App developed by me
+      version : 1.0.0
+
+
+server:
+  shutdown: graceful
+
+
